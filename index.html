@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ShowFlix</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav class="bg-gray-900/90 backdrop-blur border-b border-gray-700 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+      <h1 class="text-2xl font-bold flex items-center space-x-3">
+        <img src="icon.png" class="w-9 h-9 rounded-lg" alt="icon">
+        <span>ShowFlix</span>
+      </h1>
+
+      <div class="flex items-center space-x-6 text-gray-300">
+        <a href="#" id="resetShows" class="hover:text-white transition">All Shows</a>
+        <a href="#" id="topRated" class="hover:text-white transition">Top Rated</a>
+        <button id="searchBtn" class="hover:text-white transition text-xl">🔍</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="text-center py-16 px-6">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+      Discover Trending TV Shows
+    </h1>
+    <p class="text-gray-400 max-w-2xl mx-auto">
+      Browse top-rated series and explore details instantly.
+    </p>
+  </section>
+
+  <!-- SEARCH -->
+  <div id="searchBar" class="hidden bg-gray-800 p-4 max-w-4xl mx-auto rounded-lg mb-6">
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search show..."
+      class="w-full p-3 rounded bg-gray-700 text-white outline-none"
+    />
+  </div>
+
+  <!-- LOADING -->
+  <div id="loading" class="text-center text-gray-400 mt-10">
+    Loading shows...
+  </div>
+
+  <!-- GRID -->
+  <div id="movies"
+    class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-6 pb-16">
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal"
+    class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+
+    <div id="modalContent"
+      class="bg-gray-900 p-6 rounded-xl max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-200">
+
+      <button id="closeModal"
+        class="absolute top-3 right-3 text-white text-xl hover:text-red-500">
+        ✖
+      </button>
+
+      <h2 id="modalTitle" class="text-2xl font-bold mb-2"></h2>
+
+      <p id="modalSummary" class="text-gray-300 text-sm mb-4"></p>
+
+      <button id="watchTrailer"
+        class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition">
+        ▶ Watch Trailer
+      </button>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
